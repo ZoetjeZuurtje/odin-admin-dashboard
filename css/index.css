@@ -5,6 +5,10 @@
     --accent: orange;
 }
 
+/*
+Utility classes, not spicific to any page,
+as well as general styling.
+*/
 .flex {
     display: flex;
     gap: 10px;
@@ -16,9 +20,29 @@ button:hover {
     filter: brightness(80%);
 }
 
-.icon {
-    width: 2em;
-    height: 2em;
+[class^="icon"] {
+    --size: 1em;
+    width: var(--size);
+    height: var(--size);
+
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+.icon-messages {
+    top: 8px;
+}
+
+.icon-tasks {
+    top: 4px;
+    transform-origin: bottom;
+    transform: scale(0.8);
+}
+
+.icon-protected {
+    transform: scale(0.9);
+    top: 5.2px;
 }
 
 body {
@@ -43,12 +67,13 @@ body {
 }
 
 .sidebar li {
-    margin: 5px 0;
+    margin: 5px 0 0 -20px;
     height: 100%;
+    font-size: 2rem;
 }
 
-li::marker {
-    content: '';
+.sidebar ul {
+    list-style: none;
 }
 
 header {
