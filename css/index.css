@@ -6,13 +6,22 @@
 }
 
 /*
-Utility classes, not spicific to any page,
+Utility classes, not specific to any page,
 as well as general styling.
 */
 .flex {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+.truncate-lines {
+    --lines-to-keep: 1;
+
+    display: -webkit-box;
+    -webkit-line-clamp: var(--lines-to-keep);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 button:hover {
@@ -45,13 +54,14 @@ button:hover {
     top: 5.2px;
 }
 
+/* styling specific to this page */
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
 
     display: grid;
     grid-template-rows: 150px 1fr;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: max(15vw, 200px) 4fr;
     grid-template-areas:
         "nav header"
         "nav main";
@@ -66,14 +76,24 @@ body {
     background-color: var(--secondary-color);
 }
 
-.sidebar li {
-    margin: 5px 0 0 -20px;
-    height: 100%;
-    font-size: 2rem;
+/* To make the black icons white */
+.sidebar [class^="icon"] {
+    filter: invert();
+}
+
+.sidebar a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
 }
 
 .sidebar ul {
     list-style: none;
+    margin-left: -20px;
+}
+
+.sidebar li + li {
+    margin-top: 5px;
 }
 
 header {
@@ -85,10 +105,6 @@ header {
 }
 
 header .header-top {
-
-    .search-container {
-        flex-grow: 1;
-    }
 
     input {
         width: 60%;
@@ -111,17 +127,13 @@ header img {
     width: 2rem;
 }
 
-.greeting {
+.greeting :is(h3, p) {
+    margin: 0 auto;
+}
 
-    h3,
-    p {
-        margin: 0 auto;
-    }
-
-    img {
-        height: 4rem;
-        width: 4rem;
-    }
+.greeting img {
+    width: 4rem;
+    height: 4rem;
 }
 
 main {
@@ -133,16 +145,20 @@ main {
     grid-template-areas:
         "projects announcements"
         "projects trending";
-    gap: 10px;
+    column-gap: 40px;
+    row-gap: 20px;
 
     background-color: var(--primary-color);
 
     --section-title-size: 1.5rem;
 }
 
-article {
+article,
+.side-content .content {
     border-radius: 10px;
     border: none;
+
+    background-color: var(--tertiary-color);
 }
 
 section h3 {
@@ -150,14 +166,25 @@ section h3 {
     margin: 10px 0;
 }
 
+.your-projects {
+    grid-area: projects;
+}
+
+.your-projects .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 40px;
+}
+
 /* Styling for project cards */
 .project {
     background-color: var(--tertiary-color);
+
+    /* Necessary for the orange bar */
     overflow: hidden;
-    color: black;
     position: relative;
     padding-left: 20px;
-    height: 100%;
 }
 
 /* The orange bar on the left of the project card */
@@ -173,34 +200,9 @@ section h3 {
     background-color: var(--accent);
 }
 
-/* Truncate the description if it is too long */
-.project p {
-    margin: 0;
-    /* Truncate the text after 3 lines */
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.side-content .content {
-    background-color: var(--primary-color);
-    border-radius: 10px;
-}
-
-.your-projects {
-    grid-area: projects;
-}
-
-.your-projects .content {
-    height: calc(100% - var(--section-title-size) - var(--section-title-size));
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 10px;
-}
-
 .content {
+    box-sizing: border-box;
+    height: calc(100% - var(--section-title-size) - var(--section-title-size));
     margin: 0;
 }
 
@@ -211,28 +213,15 @@ section h3 {
     }
 
     .content {
-        padding: 2rem 1rem;
-        box-sizing: border-box;
-        height: calc(100% - var(--section-title-size) - var(--section-title-size));
-
-        background-color: var(--tertiary-color);
+        padding: 40px 30px;
     }
 
     article {
         height: 30%;
     }
 
-    hr {
-        margin-bottom: 15%;
-        margin-top: 0;
-    }
-
-    p {
+    .truncate-lines {
         margin: 0;
-        /* Truncate the text after 3 lines */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        --lines-to-keep: 2;
     }
 }
