@@ -194,7 +194,12 @@ section h3 {
     }
 
     article {
-        height: 5rem;
+        height: 30%;
+    }
+
+    hr {
+        margin-bottom: 15%;
+        margin-top: 0;
     }
 
     p {
