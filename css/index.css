@@ -1,6 +1,6 @@
 :root {
     --primary-color: hsl(220, 40%, 90%);
-    --secondary-color: hsl(220, 100%, 70%);
+    --secondary-color: hsl(220, 100%, 60%);
     --tertiary-color: white;
     --accent: orange;
 }
@@ -22,6 +22,15 @@ as well as general styling.
     -webkit-line-clamp: var(--lines-to-keep);
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
 }
 
 button:hover {
@@ -123,8 +132,7 @@ header > div {
 }
 
 header img {
-    height: 2rem;
-    width: 2rem;
+    --size: 2rem;
 }
 
 .greeting :is(h3, p) {
