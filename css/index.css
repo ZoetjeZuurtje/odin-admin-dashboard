@@ -142,6 +142,9 @@ header img {
 .searchbar:has(:focus-within, :hover) {
     width: 50%;
 }
+.searchbar:focus-within {
+    outline: 3px var(--accent) solid;
+}
 .searchbar > span {
     font-size: 2rem;
     padding: 0.5rem;
@@ -151,6 +154,7 @@ header img {
     }
 }
 .searchbar > input {
+    outline: none;
     border: none;
     background-color: transparent;
     color: white;
