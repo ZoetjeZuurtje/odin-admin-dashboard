@@ -1,6 +1,6 @@
 :root {
     --primary-color: hsl(220, 40%, 90%);
-    --secondary-color: hsl(220, 100%, 60%);
+    --secondary-color: hsl(220, 70%, 60%);
     --tertiary-color: white;
     --accent: orange;
 }
@@ -107,42 +107,33 @@ body {
 
 header {
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    gap: 10px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "search    search        .    header-profile"
+        "greeting  greeting      .    header-buttons";
 
     background-color: var(--tertiary-color);
-}
 
-header .header-top button {
-    background-image: url('../assets/images/bell-ring.svg');
-    background-color: transparent;
-    width: 2rem;
-    height: 2rem;
-}
-
-header > div {
-    justify-content: space-between;
-    padding: 0 10px;
-}
-
-header img {
-    --size: 2rem;
+    padding: 30px;
 }
 
 .searchbar {
+    grid-area: search;
     display: flex;
     
     width: 3rem;
     height: 3rem;
     margin-top: 10px;
     background-color: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 100vh;
 
     overflow: hidden;
     transition: width 500ms;
 }
 .searchbar:has(:focus-within, :hover) {
-    width: 50%;
+    width: 100%;
 }
 .searchbar:focus-within {
     outline: 3px var(--accent) solid;
@@ -159,17 +150,35 @@ header img {
     outline: none;
     border: none;
     background-color: transparent;
-    color: white;
-    width: calc(100% - 4rem);
+    width: 100%;
+}
+.searchbar input,
+.searchbar ::placeholder {
+    color: var(--tertiary-color);
 }
 
-.greeting :is(h3, p) {
-    margin: 0 auto;
+.header-profile {
+    grid-area: header-profile;
 }
 
-.greeting img {
-    width: 4rem;
-    height: 4rem;
+.greeting {
+    grid-area: greeting;
+
+    :is(h2, p) { margin: 0 auto; }
+    & > div {
+        margin-top: 20px;
+    }
+    & > img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.header-buttons {
+    grid-area: header-buttons;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 main {
