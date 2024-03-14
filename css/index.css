@@ -69,8 +69,8 @@ body {
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 150px 1fr;
-    grid-template-columns: max(15vw, 200px) 4fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-columns: max(20vw, 250px) 4fr;
     grid-template-areas:
         "nav header"
         "nav main";
@@ -114,6 +114,8 @@ header {
 }
 
 header .header-top button {
+    background-image: url('../assets/images/bell-ring.svg');
+    background-color: transparent;
     width: 2rem;
     height: 2rem;
 }
