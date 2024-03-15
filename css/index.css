@@ -274,15 +274,11 @@ section h3 {
     background-color: transparent;
     width: 2rem;
     height: 2rem;
-}
-.project-button.like {
-    background-image: url('../assets/images/star-outline.svg');
-}
-.project-button.watch {
-    background-image: url('../assets/images/watch-outline.svg');
-}
-.project-button.fork {
-    background-image: url('../assets/images/source-fork.svg');
+
+    /* Background images for the specific buttons */
+    &.like  { background-image: url('../assets/images/star-outline.svg');  }
+    &.watch { background-image: url('../assets/images/watch-outline.svg'); }
+    &.fork  { background-image: url('../assets/images/source-fork.svg');   }
 }
 
 .content {
@@ -292,9 +288,9 @@ section h3 {
 }
 
 .side-content {
-    & h4      {   margin: 0 0 5px 0;  }
-    & .content{   padding: 40px 30px; }
-    & article {   height: 30%;        }
+    & h4       { margin: 0 0 5px 0;  }
+    & .content { padding: 20px 30px; }
+    & article  { height: 30%;        }
     & .truncate-lines {
         margin: 0;
         --lines-to-keep: 3;
