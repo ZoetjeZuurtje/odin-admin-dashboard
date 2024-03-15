@@ -68,7 +68,7 @@ body {
 
     display: grid;
     grid-template-rows: 200px 1fr;
-    grid-template-columns: max(20vw, 250px) 4fr;
+    grid-template-columns: clamp(250px, 20vw, 400px) 4fr;
     grid-template-areas:
         "nav header"
         "nav main";
