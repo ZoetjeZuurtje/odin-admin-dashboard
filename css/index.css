@@ -209,6 +209,7 @@ main {
     row-gap: 20px;
 
     background-color: var(--primary-color);
+    box-shadow: inset 0px 70px 25px -80px black;
 
     --section-title-size: 1.5rem;
 }
