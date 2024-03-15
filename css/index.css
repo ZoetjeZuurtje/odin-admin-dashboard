@@ -25,12 +25,10 @@ as well as general styling.
 }
 
 button {
-    background-color: var(--secondary-color);
     color: var(--tertiary-color);
     border: none;
     border-radius: 20px;
     padding: 10px;
-    width: 100px;
 }
 
 button:hover {
@@ -164,11 +162,8 @@ header {
 }
 .header-profile > button {
     background-image: url('../assets/images/bell-ring.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
     aspect-ratio: 1;
         
-    background-color: transparent;
     width: 2rem;
 }
 .header-profile > img {
@@ -195,13 +190,17 @@ header {
     justify-content: end;
     align-items: flex-end;
     gap: 20px;
+    & > button {
+        background-color: var(--secondary-color);
+        width: 100px;
+    }
 }
 
 main {
     box-sizing: border-box;
     padding: 32px;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "projects announcements"
@@ -241,12 +240,12 @@ section h3 {
 /* Styling for project cards */
 .project {
     background-color: var(--tertiary-color);
-    --lines-to-keep: 2;
+    --lines-to-keep: 4;
 
     /* Necessary for the orange bar */
     overflow: hidden;
     position: relative;
-    padding-left: 20px;
+    padding: 0 20px 20px 20px;
 }
 
 /* The orange bar on the left of the project card */
@@ -260,6 +259,29 @@ section h3 {
     width: 10px;
 
     background-color: var(--accent);
+}
+.project-actions {
+    justify-content: end;
+    align-items: self-end;
+
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.project-button {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+}
+.project-button.like {
+    background-image: url('../assets/images/star-outline.svg');
+}
+.project-button.watch {
+    background-image: url('../assets/images/watch-outline.svg');
+}
+.project-button.fork {
+    background-image: url('../assets/images/source-fork.svg');
 }
 
 .content {
