@@ -172,9 +172,11 @@ header {
 }
 .header-profile > button {
     background-image: url('../assets/images/bell-ring.svg');
+    background-color: transparent;
     aspect-ratio: 1;
         
     width: 2rem;
+    &:hover { filter: unset; }
 }
 .header-profile > img {
     width: 4em;
