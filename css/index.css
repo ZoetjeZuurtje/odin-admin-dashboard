@@ -16,7 +16,7 @@ as well as general styling.
 }
 
 .truncate-lines {
-    --lines-to-keep: 1;
+    --lines-to-keep: unset;
 
     display: -webkit-box;
     -webkit-line-clamp: var(--lines-to-keep);
@@ -108,10 +108,10 @@ body {
 header {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
-        "search    search        .    header-profile"
-        "greeting  greeting      .    header-buttons";
+        "search    search    header-profile"
+        "greeting  greeting  header-buttons";
 
     background-color: var(--tertiary-color);
 
@@ -133,7 +133,7 @@ header {
     transition: width 500ms;
 }
 .searchbar:has(:focus-within, :hover) {
-    width: 100%;
+    width: 70%;
 }
 .searchbar:focus-within {
     outline: 3px var(--accent) solid;
@@ -159,6 +159,22 @@ header {
 
 .header-profile {
     grid-area: header-profile;
+    justify-content: end;
+    gap: 0;
+}
+.header-profile > button {
+    background-image: url('../assets/images/bell-ring.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    aspect-ratio: 1;
+        
+    background-color: transparent;
+    width: 2rem;
+}
+.header-profile > img {
+    width: 4em;
+    margin: 0 20px;
+    
 }
 
 .greeting {
@@ -176,8 +192,8 @@ header {
 
 .header-buttons {
     grid-area: header-buttons;
-    display: flex;
-    align-items: center;
+    justify-content: end;
+    align-items: flex-end;
     gap: 20px;
 }
 
@@ -225,6 +241,7 @@ section h3 {
 /* Styling for project cards */
 .project {
     background-color: var(--tertiary-color);
+    --lines-to-keep: 2;
 
     /* Necessary for the orange bar */
     overflow: hidden;
@@ -252,12 +269,10 @@ section h3 {
 }
 
 .side-content {
-
-    h4      {   margin: 0 0 5px 0;  }
-    .content{   padding: 40px 30px; }
-    article {   height: 30%;        }
-
-    .truncate-lines {
+    & h4      {   margin: 0 0 5px 0;  }
+    & .content{   padding: 40px 30px; }
+    & article {   height: 30%;        }
+    & .truncate-lines {
         margin: 0;
         --lines-to-keep: 3;
     }
