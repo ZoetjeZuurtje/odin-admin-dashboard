@@ -1,8 +1,8 @@
 :root {
-    --primary-color: hsl(220, 40%, 90%);
-    --secondary-color: hsl(210, 70%, 60%);
+    --primary-color: hsl(100, 30%, 95%);
+    --secondary-color: hsl(100, 30%, 60%);
     --tertiary-color: white;
-    --accent: orange;
+    --accent: hsl(280, 30%, 60%);
     --text-color: hsl(0, 0%, 30%);
 }
 
@@ -144,10 +144,12 @@ header {
 .searchbar:focus-within {
     outline: 3px var(--accent) solid;
 }
-.searchbar > span {
-    font-size: 2rem;
+.searchbar > img {
+    width: 30px;
+    height: 30px;
     padding: 0.5rem;
     margin-right: 1rem;
+    filter: invert();
     &:hover {
         cursor: pointer;
     }
@@ -207,6 +209,7 @@ header {
 main {
     box-sizing: border-box;
     padding: 32px;
+
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -250,7 +253,7 @@ section h3 {
 /* Styling for project cards */
 .project {
     background-color: var(--tertiary-color);
-    --lines-to-keep: 4;
+    --lines-to-keep: 2;
     --project-padding: 30px;
 
     /* Necessary for the orange bar */
@@ -316,7 +319,7 @@ section h3 {
     }
     & .truncate-lines {
         margin: 0;
-        --lines-to-keep: 3;
+        --lines-to-keep: 2;
     }
 }
 
