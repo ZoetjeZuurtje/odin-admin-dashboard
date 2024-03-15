@@ -217,7 +217,8 @@ main {
     row-gap: 20px;
 
     background-color: var(--primary-color);
-    box-shadow: inset 0px 70px 25px -80px black;
+    box-shadow: inset 0px 5px 5px lightgrey;
+
 
     --section-title-size: 1.5rem;
 }
@@ -250,12 +251,13 @@ section h3 {
 .project {
     background-color: var(--tertiary-color);
     --lines-to-keep: 4;
-    --project-padding: 20px;
+    --project-padding: 30px;
 
     /* Necessary for the orange bar */
     overflow: hidden;
     position: relative;
     padding: var(--project-padding);
+    box-shadow: 5px 5px 5px lightgrey;
 }
 
 /* The orange bar on the left of the project card */
@@ -307,8 +309,11 @@ section h3 {
 
 .side-content {
     & h4       { margin: 0 0 5px 0;  }
-    & .content { padding: 20px 30px; }
     & article  { height: 30%;        }
+    & .content {
+        padding: 20px 30px;
+        box-shadow: 5px 5px 5px lightgrey;
+    }
     & .truncate-lines {
         margin: 0;
         --lines-to-keep: 3;
