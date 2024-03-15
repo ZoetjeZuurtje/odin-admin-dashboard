@@ -314,3 +314,25 @@ section h3 {
         --lines-to-keep: 3;
     }
 }
+
+.trending {
+    grid-area: trending;
+    & > .content {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+    }
+}
+
+.profile-picture {
+    height: 3rem;
+    margin: 0;
+}
+
+.trending-profile {
+    margin: 0;
+}
+
+.trending-project {
+    margin: 0;
+}
