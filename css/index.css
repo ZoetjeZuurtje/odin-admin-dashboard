@@ -250,32 +250,39 @@ section h3 {
 .project {
     background-color: var(--tertiary-color);
     --lines-to-keep: 4;
+    --project-padding: 20px;
 
     /* Necessary for the orange bar */
     overflow: hidden;
     position: relative;
-    padding: 0 20px 20px 20px;
+    padding: var(--project-padding);
 }
 
 /* The orange bar on the left of the project card */
 .project::before {
     content: '';
     position: absolute;
+    top: 0;
     left: 0;
-
+    
     display: inline-block;
     height: 100%;
     width: 10px;
-
+    
     background-color: var(--accent);
 }
 .project-actions {
     justify-content: end;
     align-items: self-end;
-
+    gap: 20px;
+    
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: var(--project-padding);
+    right: var(--project-padding);
+}
+
+.project h3 {
+    margin-top: 0;
 }
 
 .project-button {
