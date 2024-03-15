@@ -79,6 +79,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     gap: 10%;
+    padding: 20px;
 
     background-color: var(--secondary-color);
 }
@@ -90,17 +91,21 @@ body {
 
 .sidebar a {
     font-size: 1.5rem;
-    color: white;
+    color: var(--tertiary-color);
     text-decoration: none;
 }
 
 .sidebar ul {
     list-style: none;
-    margin-left: -20px;
+    margin-left: -40px;
 }
 
 .sidebar li + li {
     margin-top: 5px;
+}
+
+.sidebar .logo {
+    font-size: 2.2rem;
 }
 
 header {
